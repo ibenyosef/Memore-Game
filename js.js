@@ -34,6 +34,7 @@ function addFunc(add) {
     if (firstUse == 1) {
         startTimer();
     }
+    reduceRating(firstUse);
     turnCard(add, 'flipped');
     check.push(add);
     //console.log(check);
@@ -108,4 +109,18 @@ function incrementSeconds() {
 
 var cancel = setInterval(incrementSeconds, 1000);
     
+}
+
+function reduceRating(num) {
+    console.log(num);
+    switch (num) {
+  case 8:
+    el = document.getElementById('star1');
+    el.setAttribute("class", "off");
+    break;
+  case 13:
+    el = document.getElementById('star2');
+    el.setAttribute("class", "off");
+    break;
+    }
 }
