@@ -55,39 +55,41 @@
 #game div {
 background-color:brown;}
 
-
-.star{
-   position:relative;
-   height:0px;
-   width:0px;
-   
-   border-right:  100px solid transparent;
-   border-bottom: 70px  solid gold;
-   border-left:   100px solid transparent;
-   
-   transform:    rotate(35deg);
+.rating, #seconds-counter,#reset{
+    display: inline-block;
+  font-style: normal;
+  line-height: 30px;
+  text-indent: 0.2em;
+  text-shadow: 1px 0 1px hsl(0, 0%, 70%);
+  border-radius: .22em;
+  color: white;
+    padding:5px;
+    margin:5px;
+}
+.rating span {
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #eee;
+    padding:5px;
 }
 
-.star:before{
-   position:absolute;
-   top: -45px;
-   left: -65px;
-   content:"";
-   border-bottom: 80px solid gold;
-   border-left: 30px solid transparent;
-   border-right: 30px solid transparent;
-   
-   transform: rotate(-35deg);
+#reset {
+  width: 20px;
+  height: 20px;
+  background: blue  ;
+    border-width: 3px;
+  border-style: solid;
+  border-color: #eee;
+    
 }
-
-.star:after{
-   position:absolute;
-   top: 3px;
-   left: -105px;
-   content:"";
-   border-right: 100px solid transparent;
-   border-bottom: 70px solid gold;
-   border-left: 100px solid transparent;
-   
-   transform: rotate(-70deg);
-}
+#seconds-counter {
+  width: 20px;
+  height: 20px;
+  background: red  ;
+       border-width: 3px;
+  border-style: solid;
+  border-color: #eee;
+    }
