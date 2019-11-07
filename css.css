@@ -1,0 +1,93 @@
+#game {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px 150px;
+    grid-template-areas:
+        "div div div div"
+        "div div div div"
+        "div div div div"
+        "div div div div";
+        
+    grid-gap: 10px;
+}
+
+.a1flipped, .a2flipped, .b1flipped, .b2flipped, .c1flipped, .c2flipped, .d1flipped, .d2flipped, .e1flipped, .e2flipped,.f1flipped,.f2flipped,.g1flipped,.g2flipped,.h1flipped,.h2flipped {
+    background-image: url('https://coderwall-assets-0.s3.amazonaws.com/uploads/picture/file/642/humans.jpeg');
+    background-repeat: no-repeat;
+}
+
+.a1flipped, .a2flipped {
+  background-position: 0 0;
+ 
+}
+
+.b1flipped, .b2flipped {
+  background-position: 0 -150px;
+ 
+}
+.c1flipped, .c2flipped {
+  background-position: -150px 0;
+ 
+}
+.d1flipped, .d2flipped {
+  background-position: -150px -150px;
+ 
+}
+.e1flipped, .e2flipped {
+  background-position: -300px 0px;
+ 
+}
+.f1flipped, .f2flipped {
+  background-position: -300px -150px;
+ 
+}
+
+.g1flipped, .g2flipped {
+  background-position: -450px 0px;
+ 
+}
+
+.h1flipped, .h2flipped {
+  background-position: -450px -150px;
+ 
+}
+#game div {
+background-color:brown;}
+
+
+.star{
+   position:relative;
+   height:0px;
+   width:0px;
+   
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid gold;
+   border-left:   100px solid transparent;
+   
+   transform:    rotate(35deg);
+}
+
+.star:before{
+   position:absolute;
+   top: -45px;
+   left: -65px;
+   content:"";
+   border-bottom: 80px solid gold;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   
+   transform: rotate(-35deg);
+}
+
+.star:after{
+   position:absolute;
+   top: 3px;
+   left: -105px;
+   content:"";
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid gold;
+   border-left: 100px solid transparent;
+   
+   transform: rotate(-70deg);
+}
