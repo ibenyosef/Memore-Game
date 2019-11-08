@@ -55,7 +55,7 @@
 #game div {
 background-color:brown;}
 
-.rating, #seconds-counter,#reset{
+#seconds-counter, #reset{
     display: inline-block;
   font-style: normal;
   line-height: 30px;
@@ -66,6 +66,7 @@ background-color:brown;}
     padding:5px;
     margin:5px;
 }
+.rating {display:inline-block;}
 .rating span {
   width: 20px;
   height: 20px;

@@ -42,7 +42,7 @@ function addFunc(add) {
         let second= check[1];
     if (check.length == 2) {
 
-        if ((first.substring(0, 1)) == (second.substring(0, 1))) {
+        if (((first.substring(0, 1)) == (second.substring(0, 1)))&& (!(first === second))) {
             addSuccess();
         }else {
             turnAgain(first,second);
@@ -92,6 +92,7 @@ function startTimer(stop) {
         el.remove();
     }
     newElement.setAttribute("id", newId);
+    newElement.innerHTML='0';
     mainDiv.insertBefore(newElement,resetDiv);
 
 var seconds = 0;
