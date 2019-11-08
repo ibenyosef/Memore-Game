@@ -43,7 +43,7 @@ function addFunc(add) {
     if (check.length == 2) {
 
         if ((first.substring(0, 1)) == (second.substring(0, 1))) {
-            console.log('yes');
+            addSuccess();
         }else {
             turnAgain(first,second);
         }
@@ -62,11 +62,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function demo() {
-  console.log('Taking a break...');
-  console.log('Two second later');
-}
-        
 async function turnAgain(first,second) {
     await sleep(2000);
     turnCard(first, '');
@@ -87,7 +82,7 @@ function resetGame(){
     startTimer();
 }
 
-function startTimer() {
+function startTimer(stop) {
     let resetDiv = document.getElementById("reset");
     let newElement = document.createElement("div");
     let mainDiv = document.getElementById("controllers");
@@ -103,7 +98,9 @@ var seconds = 0;
 var ele = document.getElementById('seconds-counter');
 
 function incrementSeconds() {
-    seconds += 1;
+    if (!(stop)){
+        seconds += 1;
+    }
     ele.innerText = seconds;
 }
 
@@ -112,7 +109,7 @@ var cancel = setInterval(incrementSeconds, 1000);
 }
 
 function reduceRating(num) {
-    console.log(num);
+//    console.log(num);
     switch (num) {
   case 8:
     el = document.getElementById('star1');
@@ -122,5 +119,23 @@ function reduceRating(num) {
     el = document.getElementById('star2');
     el.setAttribute("class", "off");
     break;
+    }
+}
+var countSuccess=0;
+function addSuccess() {
+    countSuccess++;
+    console.log(countSuccess);
+    if (countSuccess == 8) {
+        let secondsDone = document.getElementById('seconds-counter').innerHTML;    
+        let removeCount = document.getElementById('seconds-counter');
+        removeCount.remove();
+        console.log(secondsDone);
+        let resetDiv = document.getElementById("reset");
+        let newElement = document.createElement("div");
+        newElement.setAttribute("id", 'seconds-counter');
+        newElement.innerText = secondsDone;
+        let mainDiv = document.getElementById("controllers");
+        mainDiv.insertBefore(newElement,resetDiv);
+        countSuccess = 0;
     }
 }
