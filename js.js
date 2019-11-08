@@ -27,13 +27,18 @@ function createDiv(id) {
   let lastDiv = document.getElementById("last");
   mainDiv.insertBefore(newElement,lastDiv);
 }
+
 var check= [];
+
 var firstUse = 0;
 function addFunc(add) {
     firstUse++;
     if (firstUse == 1) {
         startTimer();
     }
+    let movedDiv = document.getElementById("moves");    
+    movedDiv.innerHTML = firstUse + ' Moves';
+
     reduceRating(firstUse);
     turnCard(add, 'flipped');
     check.push(add);
